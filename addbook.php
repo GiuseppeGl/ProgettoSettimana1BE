@@ -1,6 +1,7 @@
 <?php require_once("assets/php/header.php");
+require_once("assets/php/config.php");
 require_once("assets/php/navbar.php");
-require_once("assets/php/config.php") ?>
+ ?>
 
 
 <h2 class="m-4 text-center">Book Form</h2>
