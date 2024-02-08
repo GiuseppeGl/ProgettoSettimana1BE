@@ -17,8 +17,8 @@ if ($_REQUEST["mode"] === 'new') {
     $pass = $matchesPass ? htmlspecialchars($_REQUEST['password']) : exit();
     $password = password_hash($pass, PASSWORD_DEFAULT);
 
-    if (!empty($_FILES['fotoFile'])) {
-        $target_dir = "http://" . $_SERVER['SERVER_NAME'] . '/assets/uploads/';
+    if (empty($_FILES['fotoFile'])) {
+        $target_dir = "http://" . $_SERVER['SERVER_NAME'] .'/assets/uploads/';
         $tutta_dir = $target_dir . "default.png";
     } else {
         if ($_FILES['fotoFile']['type'] === 'image/jpeg' || $_FILES['fotoFile']['type'] === 'image/png') {
