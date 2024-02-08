@@ -1,15 +1,31 @@
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/*.code-snippets
+# File e cartelle tipici di macOS
+.DS_Store
+.AppleDouble
+.LSOverride
 
-# Local History for Visual Studio Code
-.history/
+# Icon file
+Icon
+# Thumbnails
+._*
 
-# Built Visual Studio Code Extensions
-*.vsix
+# File che potrebbero apparire sulla root di una cartella volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
 
-node_modules/
-bootstrap-5.3.2/
+# Directories
+.AppleDesktop
+.AppleDB
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Altro
+*.log
+*.tmp
+*.swp
+*.swo
