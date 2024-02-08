@@ -1,12 +1,11 @@
 <?php require_once("assets/php/header.php"); require_once("assets/php/navbar.php"); require_once("assets/php/config.php") ?>
 
 <?php
-if (isset($_REQUEST["error"]) && ($_REQUEST["error"] === 'user' || $_REQUEST["error"] === 'pwd')) {
+if(isset($_REQUEST["error"]) && ($_REQUEST["error"] === 'user' || $_REQUEST["error"] === 'pwd')) {
 ?>
 <p class="d-flex justify-content-center text-danger m-4">Please provide a correct username/password</p>
 <?php
-}
-?>
+}?>
 
 <div class="d-flex justify-content-center mt-4">
 <form method="POST" class="g-3 needs-validation m-3" action="controller.php?mode=login" enctype="multipart/form-data"

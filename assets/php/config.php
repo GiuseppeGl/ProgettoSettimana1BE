@@ -1,13 +1,9 @@
 <?php
 
+// session_start();
 
-
-
-if (!session_id()) {
-    session_start();
-}
-
-
+//Variabili d'ambiente
+$percorso = '';
 
 $config = [
     'mysql_host' => 'localhost',
