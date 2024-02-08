@@ -1,29 +1,24 @@
-<?php require_once("assets/php/header.php"); require_once("assets/php/navbar.php"); require_once("assets/php/config.php") ?>
+<?php  require_once("assets/php/header.php"); require_once("assets/php/navbar.php"); require_once("assets/php/config.php") ?>
+
+
 
 <div class="sezioneBooks">
-  <?php
-  if ($_SESSION['login'] === 'true') {
-    // Leggo dati da una tabella
-  
+<?php
+if (isset($_SESSION['login']) && $_SESSION['login'] === 'true') {
+    // Leggi dati da una tabella
     $sql = 'SELECT libri.isbn, libri.titolo, libri.anno_pub, libri.img_src, libri.created_by_user_id, autori.nome, generi.genere FROM libri INNER JOIN autori ON libri.id_autore = autori.id JOIN generi ON libri.id_genere = generi.id WHERE libri.created_by_user_id = ' . $_SESSION["user_id"];
     $result = [];
-    $res = $my_db->query($sql); // return un mysqli result
-    if ($res) { // Controllo se ci sono dei dati nella variabile $res
-      //var_dump($res);
-      while ($row = $res->fetch_assoc()) { // Trasformo $res in un array associativo
-        // $result[] = $row; // estraggo ogni singola riga che leggo dal DB e la inserisco in un array
-        array_push($result, $row); // estraggo ogni singola riga che leggo dal DB e la inserisco in un array
-      }
+    $res = $my_db->query($sql); // Restituisce un risultato mysqli
+    if ($res) { // Controlla se ci sono dati nella variabile $res
+        while ($row = $res->fetch_assoc()) { // Trasforma $res in un array associativo
+            array_push($result, $row); // Estrai ogni singola riga dal DB e inseriscila in un array
+        }
     }
-
-  } else {
+} else {
     echo "<p class='m-4'>Please consider login (or create a new account).</p>";
-  }
-  ;
+}
+?>
 
-
-
-  ?>
 
   <div class="row row-cols-1 row-cols-md-4 g-4 mb-5 mt-4 mx-3">
     <?php

@@ -1,6 +1,6 @@
 <?php require_once("assets/php/header.php");
 require_once("assets/php/navbar.php");
-/* require_once("assets/php/config.php") */ ?>
+require_once("assets/php/config.php") ?>
 
 <div class="d-flex m-4">
     <form method="POST" class="needs-validation m-3 w-100 " action="controller.php?mode=new" enctype="multipart/form-data">

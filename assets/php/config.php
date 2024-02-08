@@ -1,6 +1,5 @@
 <?php
-
-/* session_start(); */
+session_start(); 
 
 $config = [
     'mysql_host' => 'localhost',
